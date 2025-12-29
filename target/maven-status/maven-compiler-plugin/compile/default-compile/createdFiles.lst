@@ -1,0 +1,5 @@
+senlenium_udemy\functional_tests\pageObject\LandingPage.class
+senlenium_udemy\functional_tests\pageObject\ProductCatalogue.class
+senlenium_udemy\functional_tests\pageObject\Confirmation.class
+senlenium_udemy\functional_tests\AbstractComponents\AbstractComponent.class
+senlenium_udemy\functional_tests\pageObject\Payment.class

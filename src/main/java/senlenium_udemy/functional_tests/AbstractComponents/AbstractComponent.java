@@ -1,0 +1,56 @@
+package senlenium_udemy.functional_tests.AbstractComponents;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class AbstractComponent {
+	
+	
+	WebDriver driver;
+	
+	
+	public  AbstractComponent(WebDriver driver) {
+		this.driver = driver;
+		
+	}
+
+	public void waitUntilElementVisibile(By findBy) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
+		
+	}
+	
+	public void waitUntilElementInvisible(By findBy) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(findBy));
+		
+	}
+	
+	public void waitUntilElementClickable(By findBy) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		wait.until(ExpectedConditions.elementToBeClickable(findBy));
+	}
+	
+	public void waitUntilUrlContains(String url) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		wait.until(ExpectedConditions.urlContains(url));
+	}
+	
+	public WebElement getWebElement(By findBy) {
+		WebElement w = driver.findElement(findBy);
+		return w;
+	}
+	
+	public void scrollPage(By findBy) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript(
+			        "arguments[0].scrollIntoView({block: 'center'});",
+				driver.findElement(findBy));
+	}
+}
