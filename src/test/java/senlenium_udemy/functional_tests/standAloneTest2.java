@@ -12,7 +12,7 @@ import senlenium_udemy.functional_tests.testComponents.BaseTest;
 import senlenium_udemy.functional_tests.testComponents.Retry;
 
 public class standAloneTest2 extends BaseTest {
-
+//new commment
 	
 	@Test(retryAnalyzer=Retry.class)
 	public void submitOrder() throws IOException  {
